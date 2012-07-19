@@ -16,27 +16,21 @@
 <script language="javascript">
 function chkinput(form)
 {
-	if(form.company.value=="")
+	if(form.pwd.value=="")
 	{
-		alert("请输入公司名称!");
+		alert("请输入原密码!");
 		return(false);
 	}
-	if(form.phone.value=="")
+	if(form.pwd0.value=="")
 	{
-		alert("请输入电话!");
+		alert("请输入新密码!");
 		return(false);
 	}
-	if(form.fax.value=="")
+	if(form.pwd1.value!=form.pwd0.value)
 	{
-		alert("请输入传真!");
+		alert("两次输入的密码不一致，请重新再输入!");
 		return(false);
 	}
-	if(form.email.value=="")
-	{
-		alert("请输入email!");
-		return(false);
-	}
-
 		return(true);
 }
 </script>

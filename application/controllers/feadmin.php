@@ -51,14 +51,14 @@ class Feadmin extends CI_Controller {
 	//修改密码
 
 	function change_pwd_ok() { 
-		echo $username = $this->session->userdata('username');
+		$username = $this->session->userdata('username');
 		
 		$query = $this->mhome->change_pwd($username);
 		//提示
 		$data['succ'] = $query;
 		$data['su1'] = "密码修改成功";
 		$data['su0'] = "密码修改失败,请重新输入原密码";
-		//$this->load->view('admin/success', $data);
+		$this->load->view('admin/success', $data);
 	}
 	
 	function main(){
