@@ -1,0 +1,68 @@
+body{
+	margin:0;
+	padding:0;
+	background: url("../images/bg-login.gif") repeat scroll;
+}
+
+#main{
+	margin:0 auto;
+}
+#head{
+	height:204px;
+}
+#head img{
+	height:204px;
+	width:100%;
+}
+#login{
+	width:320px;
+	margin:0 auto;
+}
+#login_img{
+}
+#login_img img{
+	width:318px;
+	height:240px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 1px 2px 2px #141414;
+	-webkit-box-shadow: 1px 2px 2px #141414;
+	box-shadow: 1px 2px 2px #141414;
+}
+#login label{
+	color: white;
+	font-size: 14px;
+	font-family: Helvetica, Arial, sans-serif;
+	float: left;
+	width: 70px;
+	margin: 0 0 32px 0;
+	padding: 0;
+}
+#login .text-input{
+	width: 200px;
+	float: right;
+	margin: 0 0 20px 0;
+	border: 0;
+	background: white;
+	padding: 6px;
+	font-size: 13px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+#login .button{
+	float:right;
+	margin-top:20px;
+	font-family: Verdana, Arial, sans-serif;
+	display: inline-block;
+	background: #459300 url('../images/bg-button-green.gif') top left repeat-x;
+	border: 1px solid #459300;
+	padding: 4px 7px 4px 7px;
+	color: white ;
+	font-size: 11px;
+	cursor: pointer;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}

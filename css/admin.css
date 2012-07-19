@@ -1,0 +1,201 @@
+body{
+	margin:0;
+	padding:0;
+    color: #555;
+    background: #f0f0f0 url('../images/bg-body.gif') top left repeat-y;
+    font-family: "微软雅黑", "宋体", Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+a{
+	text-decoration:none;
+	border:none;
+}
+
+
+#admin_main{
+	background: url('../images/bg-sidebar.gif') top left no-repeat;
+	width: 230px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #888;
+	font-size: 11px;
+}
+#admin_left{
+	margin-left:9px;
+}
+#logo{
+    margin:40px 0px;
+}
+#logo img,.list img{
+	border:none;
+}
+#admin_user{
+	text-align:right;
+	padding: 0 15px 20px 15px;
+	line-height: 1.5em;
+}
+#admin_user a{
+	color:#fff;
+}
+#admin_user a:hover{
+	color:#888;
+}
+
+
+.menu_list {
+	width:206px;
+	margin-left:15px;
+	font-size:14px;
+}
+
+.menu_head,.current{
+	text-align: right;
+	cursor: pointer;
+	display: block;
+
+}
+
+.menu_head {
+	padding: 10px 15px;
+	color: #FFFFFF;
+	font-weight:500;
+	background: url("../images/bg-menu-item-green.gif") no-repeat scroll right center;
+}
+.current{
+	background-image: url('../images/bg-menu-item-current.gif');
+	color: #333;
+	font-weight: bold;
+}
+
+.menu_head span{
+	display: block;
+}
+.menu_body { display:none; }
+.mb_current{
+	background:url("../images/menu-current-arrow.gif") no-repeat scroll right center;
+	font-weight: bold;
+	color: #fff;
+}
+.menu_body a {
+	display:block; 
+	color:#AAAAAA;
+	font-size: 13px;
+	text-align: right;
+	padding: 8px 15px;
+}
+.menu_body a:hover { 
+	color: #fff;
+}
+#admin_right{
+	background: url("../images/bg-radial-gradient.gif") no-repeat fixed 230px top transparent;
+}
+#admin_content{
+    margin: 0 30px 0 260px;
+    padding-top:10px;
+}
+#admin_foot{
+	border-top: 1px solid #CCCCCC;
+    font-size: 12px;
+    margin: 40px 0 0;
+    padding: 20px 0;
+}
+
+#content_header{
+	background: #E5E5E5 url('../images/bg-content-box.gif') top left repeat-x;
+	margin-top: 1px;
+	height: 40px;
+}
+#content_header h2{
+	font-size:17px;
+	padding: 0px 0px 0px 15px;
+	float: left;
+	color:#000;
+}
+#content_box{
+	border: 1px solid #CCC;
+	margin: 0 0 20px 0;
+	background: white;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+#content_box table{
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#content_main{
+	padding: 20px;
+	border-top: 1px solid #CCC;
+}
+.list thead th{
+	font-weight: bold;
+	font-size: 15px;
+	border-bottom: 1px solid #DDD;
+}
+.list tfoot td{
+	border-top: 1px solid #DDD;
+}
+.list table th,.list table td{
+	text-align:left;
+	padding: 10px;
+	line-height: 1.3em;
+}
+/*给所有的tr加上背景色*/
+tr.alt td { 
+    background:#ecf6fc;   
+} 
+/*鼠标高亮行的背景色*/
+tr.over td { 
+    background:#bcd4ec;   
+}
+th { 
+    background:#5FA600; 
+    color:#FFFFFF; 
+    line-height:20px; 
+    height:30px; 
+} 
+
+.list tfoot td a{
+	color:#5AA200;
+}
+.add input{
+	padding:3px 6px;
+}
+.add .submit{
+	margin:20px 0 0 0;
+	padding:6px 12px;
+}
+
+#admin_content dt{
+	padding:3px;
+}
+#admin_content dd{
+	margin:0px;
+}
+
+
+
+/*************** Pagination  for MeMo Blog ***************/
+#page .pagination {
+	padding-top: 10px; 
+	text-align: left; 
+	margin-bottom: 10px;
+	font-size: 10px;
+}
+.pagination a ,.pagination a.number {
+	margin: 0 5px 0 0;
+	padding: 3px 6px; 
+	border: 1px solid #d0d0d0;
+	float:left;
+}
+.pagination a:hover,.pagination a.current {
+	border-color: #000 !important; 
+	color: #000 !important;
+}
+ 
+#page{
+}

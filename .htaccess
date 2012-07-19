@@ -1,0 +1,5 @@
+RewriteEngine on    
+     RewriteCond $1 !^(index\.php|images|js|uploads|css|server|My97DatePicker|ueditor|robots\.txt)  
+     RewriteRule ^(.*)$ index.php/$1 [L]
+
+
