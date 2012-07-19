@@ -67,7 +67,7 @@ $(document).ready(function()
 			<div id="logo"><a href="feadmin/main/"><img src="images/logo.png" alt="" /></a></div>
 			<div id="admin_user">
 				<p>你好，<?php echo  $this->session->userdata('username');?></p>
-				<a href="">修改密码</a> | <a href="feadmin/logout">安全退出</a>
+				<a href="feadmin/main/change_pwd">修改密码</a> | <a href="feadmin/logout">安全退出</a>
 			</div>
 			<div id="firstpane" class="menu_list">
 				<p class="menu_head <?php if($this->uri->segment(3) == "addnews" || $this->uri->segment(3) == "newslist" || $this->uri->segment(3) == "changenews"){echo 'current';}?>"><span>新闻管理</span></p>
@@ -111,6 +111,9 @@ $(document).ready(function()
 			{
 			case '':
 				echo '<h1>Welcome !</h1>';
+				break;
+			case 'change_pwd':
+				$this->load->view('admin/change_pwd');
 				break;
 			case 'addnews':
 				$this->load->view('admin/addnews');

@@ -3,10 +3,13 @@
 class Feadmin extends CI_Controller {
 	function __construct(){
 		parent::__construct();
+		$this->load->database();
 		$this->load->helper('url');
 		$this->load->helper(array('form', 'url'));
 		$this->load->model('mhome');
 		$this->load->library('pagination');
+		$this->load->library('session');
+		$this->load->library('form_validation');
 	}
 	
 	function index(){
@@ -17,20 +20,20 @@ class Feadmin extends CI_Controller {
 	function login(){
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
+		
+		echo $this->input->post('username');
+		echo $this->input->post('password');
+		
 		if ($this->form_validation->run()!= false) {
 			$this->load->model('mhome');
-			//echo $this->input->post('username');
-			//echo $this->input->post('password');
 			$res = $this->mhome->login_admin(
 					$this->input->post('username'),
 					$this->input->post('password')
 			);
+			echo $this->input->post('username');
+			echo $this->input->post('password');
 			if ($res!="") {
 				$this->session->set_userdata('username',$this->input->post('username'));
-				$sessionid = $this->mhome->sessionid($this->input->post('username'));
-				$this->session->set_userdata('id',$sessionid['id']);
-				$this->session->set_userdata('user_name',$sessionid['user_name']);
-				
 				redirect('feadmin/main');
 			}else{
 				$data["error"] = "密码或用户名错误。";
@@ -38,16 +41,28 @@ class Feadmin extends CI_Controller {
 		}
 		$this->load->view('admin/login',@$data);
 	}
+	
 	//退出
 	function logout() {
 		$this->session->sess_destroy();
 		$this->load->view('admin/login');
 	}
 	
-	
+	//修改密码
+
+	function change_pwd_ok() { 
+		echo $username = $this->session->userdata('username');
+		
+		$query = $this->mhome->change_pwd($username);
+		//提示
+		$data['succ'] = $query;
+		$data['su1'] = "密码修改成功";
+		$data['su0'] = "密码修改失败,请重新输入原密码";
+		//$this->load->view('admin/success', $data);
+	}
 	
 	function main(){
-		if (!$this->session->userdata('id')) {
+		if (!$this->session->userdata('username')) {
 			redirect('feadmin/login');
 		}
 		

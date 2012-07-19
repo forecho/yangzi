@@ -23,6 +23,24 @@ class Mhome extends CI_Model{
 		return $query->row_array();
 	}	
 		
+		
+	//修改密码
+	function change_pwd($username) {
+		$pwd = $this->input->post('pwd');
+		$pwd1 = $this->input->post('pwd1');
+		$query = $this
+				->db
+				->where('username',$username)
+				->where('password',$pwd)
+				//->where('password',md5($password))
+				->limit(1)
+				->get('yz_admin');		
+		if ($query->num_rows() > 0) {
+			$this->db->update('yz_admin',array('password'=>$pwd1));
+			return 1;
+		}
+		return 0;
+	}
 	
 	//添加新闻
 	function inster_news($classify) {
