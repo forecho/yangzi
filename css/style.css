@@ -66,3 +66,8 @@ body{
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 }
+#login span{
+	float:left;
+	color:red;
+
+}

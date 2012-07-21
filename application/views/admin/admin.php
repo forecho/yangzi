@@ -89,6 +89,33 @@ $(document).ready(function()
 			</div>
 			
 			<div id="firstpane" class="menu_list">
+				<p class="menu_head <?php if($this->uri->segment(3) == "addhonor" || $this->uri->segment(3) == "honorlist" || $this->uri->segment(3) == "changehonor"){echo 'current';}?>"><span>公司荣誉管理</span></p>
+				<div class="menu_body" <?php if($this->uri->segment(3) == "addhonor" || $this->uri->segment(3) == "honorlist" || $this->uri->segment(3) == "changehonor"){echo 'style="display: block;"';}?>>
+					<a href="feadmin/main/addhonor" <?php if($this->uri->segment(3) == "addhonor"){echo 'class="mb_current"';}?>>增加荣誉</a>
+					<a href="feadmin/main/honorlist" <?php if($this->uri->segment(3) == "honorlist" || $this->uri->segment(3) == "changehonor"){echo 'class="mb_current"';}?>>荣誉列表</a>
+				</div>
+				
+			</div>
+			
+			<div id="firstpane" class="menu_list">
+				<p class="menu_head <?php if($this->uri->segment(3) == "addbanner" || $this->uri->segment(3) == "bannerlist" || $this->uri->segment(3) == "changebanner"){echo 'current';}?>"><span>首页幻灯片管理</span></p>
+				<div class="menu_body" <?php if($this->uri->segment(3) == "addbanner" || $this->uri->segment(3) == "bannerlist" || $this->uri->segment(3) == "changebanner"){echo 'style="display: block;"';}?>>
+					<a href="feadmin/main/addbanner" <?php if($this->uri->segment(3) == "addbanner"){echo 'class="mb_current"';}?>>增加幻灯片</a>
+					<a href="feadmin/main/bannerlist" <?php if($this->uri->segment(3) == "bannerlist" || $this->uri->segment(3) == "changebanner"){echo 'class="mb_current"';}?>>幻灯片列表</a>
+				</div>
+				
+			</div>
+			
+			<div id="firstpane" class="menu_list">
+				<p class="menu_head <?php if($this->uri->segment(3) == "messagelist" || $this->uri->segment(3) == "reply"){echo 'current';}?>"><span>留言板管理</span></p>
+				<div class="menu_body" <?php if($this->uri->segment(3) == "messagelist" || $this->uri->segment(3) == "reply"){echo 'style="display: block;"';}?>>
+					<a href="feadmin/main/messagelist" <?php if($this->uri->segment(3) == "messagelist" || $this->uri->segment(3) == "reply"){echo 'class="mb_current"';}?>>留言板回复、删除</a>
+				</div>
+				
+			</div>
+			
+			
+			<div id="firstpane" class="menu_list">
 				<p class="menu_head <?php if($this->uri->segment(3) == "change_company" || $this->uri->segment(3) == "zzjg" || $this->uri->segment(3) == "dszzx" || $this->uri->segment(3) == "rszp" || $this->uri->segment(3) == "gsjs" || $this->uri->segment(3) == "qywh"){echo 'current';}?>"><span>修改信息</span></p>
 				<div class="menu_body" <?php if($this->uri->segment(3) == "change_company" || $this->uri->segment(3) == "zzjg" || $this->uri->segment(3) == "dszzx" || $this->uri->segment(3) == "rszp" || $this->uri->segment(3) == "gsjs" || $this->uri->segment(3) == "qywh"){echo 'style="display: block;"';}?>>
 					<a href="feadmin/main/change_company" <?php if($this->uri->segment(3) == "change_company"){echo 'class="mb_current"';}?>>修改公司信息</a>
@@ -115,6 +142,8 @@ $(document).ready(function()
 			case 'change_pwd':
 				$this->load->view('admin/change_pwd');
 				break;
+				
+				
 			case 'addnews':
 				$this->load->view('admin/addnews');
 				break;
@@ -124,6 +153,8 @@ $(document).ready(function()
 			case 'changenews':
 				$this->load->view('admin/changenews');
 				break;
+				
+				
 			case 'addproduct':
 				$this->load->view('admin/addproduct');
 				break;
@@ -136,14 +167,42 @@ $(document).ready(function()
 			case 'change_company':
 				$this->load->view('admin/change_company');
 				break;
+				
+				
+			case 'addhonor':
+				$this->load->view('admin/addhonor');
+				break;
+			case 'honorlist':
+				$this->load->view('admin/honorlist');
+				break;
+			case 'changehonor':
+				$this->load->view('admin/changehonor');
+				break;
+				
+				
+			case 'addbanner':
+				$this->load->view('admin/addbanner');
+				break;
+			case 'bannerlist':
+				$this->load->view('admin/bannerlist');
+				break;
+			case 'changebanner':
+				$this->load->view('admin/changebanner');
+				break;
+				
+			case 'messagelist':
+				$this->load->view('admin/messagelist');
+				break;
+			case 'reply':
+				$this->load->view('admin/reply');
+				break;
+				
+				
+			case 'change_company':
+				$this->load->view('admin/change_company');
+				break;
 			case 'zzjg'||'dszzx':
 				$this->load->view('admin/change');
-				break;
-			case 'mysql':
-				$this->load->view('admin/mysql');
-				break;
-			case 'banner':
-				$this->load->view('admin/banner');
 				break;
 			}
 			?>
