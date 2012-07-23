@@ -3733,7 +3733,7 @@ var dtd = dom.dtd = (function() {
                 //设置四周的留边
                 '.view{padding:0;word-wrap:break-word;cursor:text;height:100%;}\n' +
                 //设置默认字体和字号
-                'body{margin:8px;font-family:"宋体";font-size:16px;}' +
+                'body{margin:8px;font-family:"宋体";font-size:12px;}' +
                 //针对li的处理
                 'li{clear:both}' +
                 //设置段落间距

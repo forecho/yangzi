@@ -27,6 +27,7 @@ a{
 }
 #logo{
     margin:40px 0px;
+	background:#fff;
 }
 #logo img,.list img{
 	border:none;

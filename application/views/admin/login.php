@@ -9,7 +9,7 @@
 <body>
 	
 <div id="main">
-	<form action="feadmin/login" method="post">
+	<form action="feadmin/login" method="post" onSubmit="return chkinput(this)">
 		<div id="head"><img src="images/head.png" alt="" /></div>
 		<div id="login">
 			<div id="login_img"><img src="images/login_03.png" alt="" /></div>
@@ -31,3 +31,20 @@
 </div>
 </body>
 </html>
+<script language="javascript">
+function chkinput(form)
+{
+	if(form.username.value=="")
+	{
+		alert("请输入账号!");
+		return(false);
+	}
+	if(form.password.value=="")
+	{
+		alert("请输入密码!");
+		return(false);
+	}
+
+		return(true);
+}
+</script>

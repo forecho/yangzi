@@ -112,17 +112,18 @@ class Mhome extends CI_Model{
 	
 	
 	//添加产品
-	function addproduct($image) {
+	function addproduct($image,$classify) {
 		$title = $this->input->post('title');
 		$addtime = $this->input->post('addtime');
 		
-		$data = array('title'=>$title,'addtime'=>$addtime,'image'=>$image);
+		$data = array('title'=>$title,'addtime'=>$addtime,'image'=>$image,'classify'=>$classify);
 		$query = $this->db->insert('yz_product',$data);
 	}
 	//读取产品
-	function sel_product($limit,$offset) {
+	function sel_product($limit,$offset,$classify) {
 		//$this->db->limit($limit,$offset);
 		$this->db->order_by("addtime", "desc");
+		$this->db->where('classify',$classify);
 		$query = $this->db->get('yz_product',$limit,$offset);
 		//print_r($query->result_array()) ;
 		return $query->result_array();
@@ -134,8 +135,8 @@ class Mhome extends CI_Model{
 		return $query->row();
 	}
 	//总数
-	function count_product() {
-		$query = $this->db->get('yz_product');
+	function count_product($classify) {
+		$query = $this->db->get_where('yz_product',array('classify'=>$classify));
 		return $query->num_rows();
 	}
 	//更新产品
@@ -159,7 +160,7 @@ class Mhome extends CI_Model{
 			return 0;//成功;
 		}
 	}
-	//删除新闻
+	//删除产品
 	function delproduct($image) {
 		$query = $this->db->delete('yz_product', array('image' => $image)); 
 		if ($query) {
@@ -213,6 +214,158 @@ class Mhome extends CI_Model{
 			return 0;//成功;
 		}
 	}
+	
+	
+		//添加幻灯片
+	function addbanner($image) {
+		$title = $this->input->post('title');
+		$link = $this->input->post('link');
+		
+		$data = array('title'=>$title,'link'=>$link,'image'=>$image);
+		$query = $this->db->insert('yz_banner',$data);
+	}
+	//读取幻灯片
+	function sel_banner() {
+		$this->db->order_by("id", "desc");
+		$query = $this->db->get('yz_banner');
+		//print_r($query->result_array()) ;
+		return $query->result_array();
+	}
+	
+		//修改 读取幻灯片
+	function selbanner($id) {
+		$query = $this->db->get_where('yz_banner',array('id'=>$id));
+		return $query->row();
+	}
+	
+	//更新产品
+	function change_banner($id,$image) {
+		$title = $this->input->post('title');
+		$link = $this->input->post('link');
+		if($image == ""){
+			$data = array('title' => $title,'link' => $link);
+		}else{
+			$selproduct = $this->selbanner($id);
+			//print_r($selproduct);
+			unlink('uploads/img/'.$selproduct->image);
+			$data = array('title' => $title,'image' => $image,'link' => $link);
+		}
+		$this->db->where('id',$id);
+		$query = $this->db->update('yz_banner',$data);
+		//print_r();
+		if ($query) {
+			return 1;//成功;
+		}else {
+			return 0;//成功;
+		}
+	}
+	//删除产品
+	function delbanner($image) {
+		$query = $this->db->delete('yz_banner', array('image' => $image)); 
+		if ($query) {
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+	
+	
+	
+	//读取留言
+	function sel_message($limit,$offset,$pid) {
+		//$this->db->limit($limit,$offset);
+		$this->db->order_by("id", "desc");
+		$query = $this->db->get_where('yz_message',array('pid'=>$pid),$limit,$offset);
+		//print_r($query->result_array()) ;
+		return $query->result_array();
+	}
+	
+
+	//总数 留言
+	function count_message($pid) {
+		$query = $this->db->get_where('yz_message',array('pid'=>$pid));
+		return $query->num_rows();
+	}
+	// 修改 读取留言
+	function selmessage($id){
+		$query = $this->db->get_where('yz_message',array('id'=>$id));
+		return $query->row();
+	}
+	
+	//判断是否有回复
+	function isreply($id){
+		$query = $this->db->get_where('yz_message',array('pid'=>$id));
+		return $query->num_rows();
+	}
+	//查询回复内容
+	function selreply($id){
+		$query = $this->db->get_where('yz_message',array('pid'=>$id));
+		return $query->row();
+	}
+	//回复留言
+	function reply($id) {
+		$user = "管理员";
+		$addtime = date("Y-m-d");
+		$content = $this->input->post('content');
+		
+		$data = array('user'=>$user,'addtime'=>$addtime,'content'=>$content,'pid'=>$id);
+		$query = $this->db->insert('yz_message',$data);
+		return 1;
+	}
+	
+	
+	//更新留言
+	function change_reply($id) {
+		$addtime = date("Y-m-d");
+		$content = $this->input->post('content');
+		
+		$data = array('content' => $content,'addtime' => $addtime);
+		$this->db->where('pid',$id);
+		$query = $this->db->update('yz_message',$data);
+		//print_r();
+		if ($query) {
+			return 1;//成功;
+		}else {
+			return 0;//成功;
+		}
+	}
+	
+	//删除留言 回复
+	function del_message($id) {
+		$this->db->where('id', $id);
+		$this->db->or_where('pid', $id); 
+		$query = $this->db->delete('yz_message'); 
+		if ($query) {
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+	
+	//删除回复
+	function del_reply($id) {
+		$this->db->where('pid', $id);
+		$query = $this->db->delete('yz_message'); 
+		if ($query) {
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+	
+	
+	
+	//首页 留言
+	function add_message(){
+		$user = $this->input->post('user');
+		$addtime = date("Y-m-d");
+		$content = $this->input->post('content');
+		
+		$data = array('user'=>$user,'addtime'=>$addtime,'content'=>$content,'pid'=>'0');
+		$query = $this->db->insert('yz_message',$data);
+		return 1;
+	}
+	
 	
 	
 }

@@ -1,0 +1,25 @@
+html, body, div, span,applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
+body {height:100%;}
+div {text-align:left;}
+body{font:12px/1.5em "\5b8b\4f53","Arial Narrow";color:#5c5c5c;}
+h1, h2, h3, h4, h5, h6{font-size:100%;}
+address, cite, em{font-style:normal;}
+li{list-style-type:none;}
+a{text-decoration:none;color:#016a9f;}
+a:hover{text-decoration:underline;}
+.on:hover {text-decoration:none !important;}
+fieldset, img {border:0;}
+label,button{cursor: pointer;}
+select,input,textarea{font-size:12px;line-height:1.2em;}
+table{border-collapse: collapse;border-style: none;}
+td{padding: 0;border:0;font-size:12px;line-height:1.5em;}
+/*foucebox*/
+.foucebox {width:1000px;height:330px;margin:0 auto;}
+.scrollimg {position:relative;float:left;width:1000px;height:330px;overflow:hidden;}
+#SwitchBigPic { float:left;width:5600px;}
+#SwitchBigPic .scrollimg_div {position:relative;float:left;width:1000px;height:330px;}
+.scrollimg_img {display:block;width:1000px;height:330px;}
+.scrollimg_txt {position:absolute;left:10px;top:280px;font-size:16px;color:#fff;font-family:"Microsoft Yahei";z-index:99;}
+.scrollimg_tigger {position:absolute;left:0;bottom:0;width:1000px;height:15px;padding-top:15px;overflow:hidden;font-size:0;line-height:0;text-align:center;}
+.scrollimg_tigger a {display:inline-block;width:16px;height:8px;background:#646464;margin:0 2px;color:#646464;overflow:hidden;}
+.scrollimg_tigger .on {background:#D7261E;color:#D7261E;}

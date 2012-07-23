@@ -1,0 +1,37 @@
+﻿@charset "utf-8";
+/* CSS Document 2009.7 */
+body {font-family:Arial, Helvetica, sans-serif,"宋体";margin:0;padding:0;font-size:12px;color:#666;background: url(../images/body.png) repeat-x;}
+div,form,img,ul,ol,li,dl,dt,dd,p{margin:0;padding:0;border:0;}
+ul,li{list-style-type:none;}
+img{border:0;}
+input,select,textarea{vertical-align:middle;}
+h1,h2,h3,h4,h5,h6 {margin:0;padding:0;font-size:12px;font-weight:normal;}
+/* Link */
+a{color:#666;text-decoration:none;}
+a:hover {color:#c62825;text-decoration:underline;}
+/* Other */
+.clear{ clear:both;font-size:1px;width:1px;height:0;visibility:hidden; overflow:hidden;}
+.clearfix:after{content:".";display:block; height:0;clear:both;visibility:hidden;} /* only FF */
+.left{float:left;}
+.right{float:right;}
+.img{vertical-align:middle;}
+.mauto{width:1001px; margin:0 auto;}
+.mtop{padding-top:10px;}
+/* Font  */
+.fb{font-weight:bold;}
+.f11px{font-size:11px;}
+.f14px{font-size:14px;}
+.f10px{font-size:10px;}
+.f18px{font-size:18px; font-family:Arial, Helvetica, sans-serif;}
+.li24px{line-height:24px;}
+#com_othermenu a{ color:#FFF;}
+#com_othermenu,.copyrignt{ text-align:center;color:#FFF;}
+.sslide_axx{padding:1px 6px;border-left:#cccccc 1px solid;}
+a.sslide_axx:link,a.sslide_axx:visited{text-decoration:none;color:#fff;line-height:12px;font:9px sans-serif;background-color: #343434;}
+a.sslide_axx:active,a.sslide_axx:hover{text-decoration:none;color:#fff;line-height:12px;font:9px sans-serif;background-color: #D50239;}
+.sslide_bxx{padding:1px 6px;border-left:#cccccc 1px solid;}
+a.sslide_bxx:link,a.sslide_bxx:visited{text-decoration:none;color:#fff;line-height:12px;font:9px sans-serif;background-color: #D50239;}
+a.sslide_bxx:active,a.sslide_bxx:hover{text-decoration:none;color:#fff;line-height:12px;font:9px sans-serif;background-color:#D50239;}
+.sslide_outer{overflow: hidden; text-overflow:clip; position:relative;}
+#sslide_pic{border:0px; filter:progid:dximagetransform.microsoft.wipe(gradientsize=1.0,wipestyle=4, motion=forward);}
+.sslide_abtn{filter:background:#ffffff; width:100%; text-align:right; position: absolute; right:0px; bottom:0px; height:12px; padding:0px; margin:0px; border:0px;}
