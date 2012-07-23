@@ -13,9 +13,10 @@ class Welcome extends CI_Controller {
 		$data['selcompany'] = $this->mhome->selcompany();
 		$data['gsjj'] = $this->mhome->selother('公司简介');
 		$data['sel_news'] = $this->mhome->sel_news('14','0','新闻中心');
-		$data['sel_product'] = $this->mhome->sel_product('6','0','0');
+		$data['sel_product'] = $this->mhome->sel_product('4','0','0');
+		$data['sel_banner'] = $this->mhome->sel_banner();
 		
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('index',$data);
 		$this->load->view('footer');
 	}
@@ -25,10 +26,11 @@ class Welcome extends CI_Controller {
 		$data['dszzx'] = $this->mhome->selother('董事长致信');
 		$data['gsjj'] = $this->mhome->selother('公司简介');
 		$data['qywh'] = $this->mhome->selother('企业文化');
+		$data['sel_banner'] = $this->mhome->sel_banner();
 		
 		$data['sel_product'] = $this->list_product();
 		
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('company',$data);
 		$this->load->view('footer');
 	}
@@ -36,8 +38,9 @@ class Welcome extends CI_Controller {
 	function news(){
 		$data['selcompany'] = $this->mhome->selcompany();
 		$data['sel_news'] = $this->list_news();
+		$data['sel_banner'] = $this->mhome->sel_banner();
 		
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('news',$data);
 		$this->load->view('footer');
 	}
@@ -45,8 +48,9 @@ class Welcome extends CI_Controller {
 	function content(){
 		$data['selcompany'] = $this->mhome->selcompany();
 		$data['selnews'] = $this->mhome->selnews($this->uri->segment(3));
+		$data['sel_banner'] = $this->mhome->sel_banner();
 		
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('content',$data);
 		$this->load->view('footer');
 	}
@@ -54,8 +58,9 @@ class Welcome extends CI_Controller {
 	function product(){
 		$data['selcompany'] = $this->mhome->selcompany();
 		$data['sel_product'] = $this->list_product();
+		$data['sel_banner'] = $this->mhome->sel_banner();
 		
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('product',$data);
 		$this->load->view('footer');
 	}
@@ -63,8 +68,9 @@ class Welcome extends CI_Controller {
 	function person(){
 		$data['selcompany'] = $this->mhome->selcompany();
 		$data['sel_message'] = $this->list_message();
+		$data['sel_banner'] = $this->mhome->sel_banner();
 		
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('person',$data);
 		$this->load->view('footer');
 	}
@@ -72,8 +78,9 @@ class Welcome extends CI_Controller {
 	function promit(){
 		$data['selcompany'] = $this->mhome->selcompany();
 		$data['rszp'] = $this->mhome->selother('人事招聘');
+		$data['sel_banner'] = $this->mhome->sel_banner();
 		
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('promit',$data);
 		$this->load->view('footer');
 	}

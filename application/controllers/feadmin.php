@@ -30,8 +30,8 @@ class Feadmin extends CI_Controller {
 					$this->input->post('username'),
 					$this->input->post('password')
 			);
-			echo $this->input->post('username');
-			echo $this->input->post('password');
+			//echo $this->input->post('username');
+			//echo $this->input->post('password');
 			if ($res!="") {
 				$this->session->set_userdata('username',$this->input->post('username'));
 				redirect('feadmin/main');
@@ -369,7 +369,7 @@ class Feadmin extends CI_Controller {
         $data['succ'] = $query;  
         $data['su1'] = "提交成功";  
         $data['su0'] = "文件上传失败,请检查文件再重新上传";  
-        //$this->load->view('admin/success', $data);  
+        $this->load->view('admin/success', $data);  
 	} 
 	
 	

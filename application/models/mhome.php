@@ -10,8 +10,8 @@ class Mhome extends CI_Model{
 		$query = $this
 				->db
 				->where('username',$username)
-				->where('password',$password)
-				//->where('password',md5($password))
+				//->where('password',$password)
+				->where('password',md5($password))
 				->limit(1)
 				->get('yz_admin');
 		if ($query->num_rows() > 0) {
@@ -31,12 +31,13 @@ class Mhome extends CI_Model{
 		$query = $this
 				->db
 				->where('username',$username)
-				->where('password',$pwd)
-				//->where('password',md5($password))
+				//->where('password',$pwd)
+				->where('password',md5($pwd))
 				->limit(1)
 				->get('yz_admin');		
 		if ($query->num_rows() > 0) {
-			$this->db->update('yz_admin',array('password'=>$pwd1));
+			$this->db->where('username',$username);
+			$this->db->update('yz_admin',array('password'=>md5($pwd1)));
 			return 1;
 		}
 		return 0;

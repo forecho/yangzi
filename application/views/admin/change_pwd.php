@@ -26,7 +26,7 @@ function chkinput(form)
 		alert("请输入新密码!");
 		return(false);
 	}
-	if(form.pwd1.value!=form.pwd0.value)
+	if(form.pwd0.value!=form.pwd1.value)
 	{
 		alert("两次输入的密码不一致，请重新再输入!");
 		return(false);

@@ -53,10 +53,14 @@
 <div class="i_rig" id="com_indexistop_products" editok="online">
 <dl>
 <dt> 相关产品 </dt>
-<dd class="color"><a href="product.html"> 更多 </a></dd>
+<dd class="color"><a href="welcome/product"> 更多 </a></dd>
 </dl>
 <div class="clear"></div>
 <h1>
+<?php
+//	echo "<pre>";  
+//	print_r($sel_product)
+?>
 <script language="javascript">
                         var sslide_widths=220;	//显示的宽度
                         var sslide_heights=160;	//显示的高度
@@ -64,50 +68,26 @@
                         var sslide_counts=0;
                         
                         
-                            sslide_counts=6;
-                         
-                        var sslide_img1=new Image();
-                        sslide_img1.src="images/p5.jpg";
-                        var sslide_url1=new Image();
-                        sslide_url1.src="products_view.htm@id=5";
-                        var sslide_txt1=new Image();
-                        sslide_txt1.alt="江西扬子船舶制造有限公司";
-                        
-                        var sslide_img2=new Image();
-                        sslide_img2.src="images/p4.jpg";
-                        var sslide_url2=new Image();
-                        sslide_url2.src="products_view.htm@id=4";
-                        var sslide_txt2=new Image();
-                        sslide_txt2.alt="江西扬子船舶制造有限公司";
-                        
-                        var sslide_img3=new Image();
-                        sslide_img3.src="images/p6.jpg";
-                        var sslide_url3=new Image();
-                        sslide_url3.src="products_view.htm@id=6";
-                        var sslide_txt3=new Image();
-                        sslide_txt3.alt="江西扬子船舶制造有限公司";
-                        
-                        var sslide_img4=new Image();
-                        sslide_img4.src="images/p2.jpg";
-                        var sslide_url4=new Image();
-                        sslide_url4.src="products_view.htm@id=2";
-                        var sslide_txt4=new Image();
-                        sslide_txt4.alt="江西扬子船舶制造有限公司";
-                        
-                        var sslide_img5=new Image();
-                        sslide_img5.src="images/p3.jpg";
-                        var sslide_url5=new Image();
-                        sslide_url5.src="products_view.htm@id=3";
-                        var sslide_txt5=new Image();
-                        sslide_txt5.alt="江西扬子船舶制造有限公司";
-                        
-                        var sslide_img6=new Image();
-                        sslide_img6.src="images/p1.jpg";
-                        var sslide_url6=new Image();
-                        sslide_url6.src="products_view.htm@id=1";
-                        var sslide_txt6=new Image();
-                        sslide_txt6.alt="江西扬子船舶制造有限公司";
-                        
+                            sslide_counts=<?php echo count($sel_product)?>;
+
+                            
+                      <?php
+							$p=1;
+                      		foreach($sel_product as $row){
+                   
+                      ?>
+                      
+                      				var sslide_img<?php echo $p;?>=new Image();
+    			                    sslide_img<?php echo $p;?>.src="uploads/img/<?php echo $row['image'];?>";
+   				                    var sslide_url<?php echo $p;?>=new Image();
+                        			sslide_url<?php echo $p;?>.src="<?php echo base_url();?>uploads/img/<?php echo $row['image'];?>";
+                        			var sslide_txt<?php echo $p;?>=new Image();
+                        			sslide_txt<?php echo $p;?>.alt="江西扬子船舶制造有限公司";
+                     <?php
+                     		$p++;
+                     		}                   
+                       ?>
+     
             
                         var sslide_nn=1;
                         var sslide_key=0;
@@ -141,7 +121,7 @@
                             sslide_change_img();
                         }
                         document.write('<div class="sslide_outer" style="width:' + sslide_widths + 'px;height:' + sslide_heights + 'px;">');
-                        document.write('<div><a id="sslide_url" target="_top">');
+                        document.write('<div><a id="sslide_url" target="_blank">');
                         document.write('<img id="sslide_pic" width="' + sslide_widths + '" height="' + sslide_heights + '" />');
                         document.write('</a></div>');
                         document.write('<div class="sslide_abtn">');
