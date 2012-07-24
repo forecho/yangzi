@@ -81,11 +81,11 @@
 
 	<div id="featured" > 
 	<?php foreach($sel_banner as $row){?>
-			<img src="uploads/<?php echo $row['image'];?>" rel="ezioCaption" />
+			<a href="<?php echo $row['link'];?>" title="<?php echo $row['title'];?>"><img src="uploads/<?php echo $row['image'];?>" rel="ezio<?php echo $row['id'];?>" /></a>
 	<?php }?>
 		</div> 
 		<?php foreach($sel_banner as $ban){?>
-			<span class="orbit-caption" id="ezioCaption"><?php echo $ban['title'];?></span>
+			<span class="orbit-caption" id="ezio<?php echo $ban['id'];?>"><?php echo $ban['title'];?></span>
 		<?php }?>
 		
 <!--焦点图结束-->

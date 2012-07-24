@@ -90,7 +90,7 @@ class Welcome extends CI_Controller {
 	function list_product($offset='') {
 	
 		
-		$limit = 2;// 每页显示数量
+		$limit = 8;// 每页显示数量
 		$offset = $this->uri->segment(3);
 		
 		if($this->uri->segment(2) == 'product'){
@@ -132,7 +132,7 @@ class Welcome extends CI_Controller {
 		$keyword = "新闻中心";
 		$data['nav_type'] = $keyword;
 		
-		$limit = 2;// 每页显示数量
+		$limit = 10;// 每页显示数量
 		$offset = $this->uri->segment(3);
 		$total = $this->mhome->count_news($keyword);// 统计数量
 		$data['sel_news'] = $this->mhome->sel_news($limit,$offset,$keyword);
@@ -173,7 +173,7 @@ class Welcome extends CI_Controller {
 	function list_message($offset='') {
 	
 		
-		$limit = 2;// 每页显示数量
+		$limit = 3;// 每页显示数量
 		$offset = $this->uri->segment(3);
 		
 		$pid = "0";

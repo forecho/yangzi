@@ -21,8 +21,8 @@ class Feadmin extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		
-		echo $this->input->post('username');
-		echo $this->input->post('password');
+		//echo $this->input->post('username');
+		//echo $this->input->post('password');
 		
 		if ($this->form_validation->run()!= false) {
 			$this->load->model('mhome');
@@ -122,7 +122,7 @@ class Feadmin extends CI_Controller {
 		$keyword = "新闻中心";
 		$data['nav_type'] = $keyword;
 		
-		$limit = 2;// 每页显示数量
+		$limit = 10;// 每页显示数量
 		$offset = $this->uri->segment(4);
 		$total = $this->mhome->count_news($keyword);// 统计数量
 		$data['sel_news'] = $this->mhome->sel_news($limit,$offset,$keyword);
@@ -223,7 +223,7 @@ class Feadmin extends CI_Controller {
 	function list_product($offset='') {
 	
 		
-		$limit = 2;// 每页显示数量
+		$limit = 5;// 每页显示数量
 		$offset = $this->uri->segment(4);
 		
 		if($this->uri->segment(3) == "productlist"){
@@ -431,7 +431,7 @@ class Feadmin extends CI_Controller {
 	function list_message($offset='') {
 	
 		
-		$limit = 2;// 每页显示数量
+		$limit = 8;// 每页显示数量
 		$offset = $this->uri->segment(4);
 		
 		$pid = "0";
