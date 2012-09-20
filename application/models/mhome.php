@@ -248,7 +248,7 @@ class Mhome extends CI_Model{
 		}else{
 			$selproduct = $this->selbanner($id);
 			//print_r($selproduct);
-			unlink('uploads/img/'.$selproduct->image);
+			unlink('uploads/'.$selproduct->image);
 			$data = array('title' => $title,'image' => $image,'link' => $link);
 		}
 		$this->db->where('id',$id);
