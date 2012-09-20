@@ -378,7 +378,7 @@ class Feadmin extends CI_Controller {
 		$id = $this->uri->segment(3);
 		if ($this->input->post('submit')) {
 
-			$config['upload_path'] = './uploads/img/';//绝对路径  
+			$config['upload_path'] = './uploads/';//绝对路径  
 			$config['allowed_types'] = 'gif|jpg|png';//文件支持类型  
 			$config['max_size'] = '0';  
 			$config['encrypt_name'] = true;//重命名文件  
